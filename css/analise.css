@@ -245,6 +245,8 @@ body {
   margin-bottom: 12px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .cluster-name::before {
@@ -268,6 +270,9 @@ body {
   padding: 12px 15px;
   border-radius: 10px;
   font-size: 0.95em;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .distance-value {
@@ -369,12 +374,12 @@ footer {
   background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   color: white;
   text-align: center;
-  padding: 40px 0;
+  padding: 40px 20px;
   margin-top: 60px;
 }
 
 .footer-content {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -394,31 +399,54 @@ footer {
   animation: glow 2s ease-in-out infinite alternate;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .header h1 {
-    font-size: 2.2em;
+@keyframes glow {
+  from {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  to {
+    text-shadow: 0 2px 4px rgba(52, 152, 219, 0.6);
+  }
+}
+
+/* Responsividade - Tablet */
+@media (max-width: 1024px) {
+  .container {
+    margin: 0 15px;
+    border-radius: 15px;
   }
 
   .main-content {
-    grid-template-columns: 1fr;
-    padding: 30px 20px;
+    padding: 40px 30px;
     gap: 30px;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
   }
 
   .input-section,
   .results-section {
-    padding: 25px 20px;
+    padding: 30px 25px;
+  }
+
+  .header {
+    padding: 50px 25px;
+  }
+
+  .header h1 {
+    font-size: 2.5em;
+  }
+
+  .header p {
+    font-size: 1.2em;
   }
 }
 
-@media (max-width: 480px) {
+/* Responsividade - Tablet pequeno */
+@media (max-width: 768px) {
   body {
-    padding: 10px;
+    padding-top: 15px;
+  }
+
+  .container {
+    margin: 0 5px;
+    border-radius: 12px;
   }
 
   .header {
@@ -426,7 +454,8 @@ footer {
   }
 
   .header h1 {
-    font-size: 1.8em;
+    font-size: 2.2em;
+    margin-bottom: 10px;
   }
 
   .header p {
@@ -434,6 +463,315 @@ footer {
   }
 
   .main-content {
+    grid-template-columns: 1fr;
+    padding: 30px 20px;
+    gap: 25px;
+  }
+
+  .input-section,
+  .results-section {
+    padding: 25px 20px;
+  }
+
+  .input-section h2,
+  .results-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .cluster-name {
+    font-size: 1.2em;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .cluster-name::before {
+    margin-right: 0;
+    align-self: flex-start;
+  }
+
+  .distance-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .distance-value {
+    font-size: 1em;
+  }
+
+  .quality-badge {
+    font-size: 0.75em;
+    padding: 5px 12px;
+  }
+
+  .recommendation-item {
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  .cluster-result {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .cluster-result:hover {
+    transform: translateX(0);
+  }
+
+  .btn-predict {
+    padding: 15px 20px;
+    font-size: 1em;
+  }
+
+  .form-group input {
+    padding: 10px 12px;
+    font-size: 0.95em;
+  }
+
+  .form-group label {
+    font-size: 0.9em;
+  }
+}
+
+/* Responsividade - Mobile */
+@media (max-width: 480px) {
+  body {
+    padding-top: 10px;
+  }
+
+  .container {
+    margin: 0;
+    border-radius: 10px;
+  }
+
+  .header {
+    padding: 30px 15px;
+  }
+
+  .header h1 {
+    font-size: 1.8em;
+    line-height: 1.2;
+  }
+
+  .header p {
+    font-size: 1em;
+  }
+
+  .main-content {
     padding: 20px 15px;
+    gap: 20px;
+  }
+
+  .input-section,
+  .results-section {
+    padding: 20px 15px;
+    border-radius: 10px;
+  }
+
+  .input-section h2,
+  .results-section h2 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+  }
+
+  .form-grid {
+    gap: 12px;
+  }
+
+  .form-group {
+    margin-bottom: 5px;
+  }
+
+  .form-group label {
+    font-size: 0.85em;
+    margin-bottom: 5px;
+  }
+
+  .form-group input {
+    padding: 8px 10px;
+    font-size: 0.9em;
+    border-radius: 8px;
+  }
+
+  .btn-predict {
+    padding: 12px 18px;
+    font-size: 0.95em;
+    margin-top: 15px;
+    border-radius: 25px;
+  }
+
+  .cluster-result {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+  }
+
+  .cluster-name {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+  }
+
+  .cluster-description {
+    font-size: 0.95em;
+    margin-bottom: 12px;
+  }
+
+  .distance-info {
+    font-size: 0.85em;
+    padding: 8px 10px;
+    border-radius: 8px;
+  }
+
+  .quality-badge {
+    font-size: 0.7em;
+    padding: 4px 10px;
+  }
+
+  .recommendation-item {
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    font-size: 0.9em;
+  }
+
+  .recommendations h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+
+  .error-message {
+    padding: 15px;
+    font-size: 0.9em;
+    border-radius: 8px;
+  }
+
+  footer {
+    padding: 30px 15px;
+    margin-top: 40px;
+  }
+
+  .footer-title {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+
+  .developer-name {
+    font-size: 1.3em;
+  }
+}
+
+/* Responsividade - Mobile muito pequeno */
+@media (max-width: 320px) {
+  .header h1 {
+    font-size: 1.6em;
+  }
+
+  .header p {
+    font-size: 0.9em;
+  }
+
+  .input-section h2,
+  .results-section h2 {
+    font-size: 1.2em;
+  }
+
+  .form-group label {
+    font-size: 0.8em;
+  }
+
+  .form-group input {
+    padding: 6px 8px;
+    font-size: 0.85em;
+  }
+
+  .btn-predict {
+    padding: 10px 15px;
+    font-size: 0.9em;
+  }
+
+  .cluster-name {
+    font-size: 1em;
+  }
+
+  .cluster-description {
+    font-size: 0.9em;
+  }
+
+  .distance-info {
+    font-size: 0.8em;
+    padding: 6px 8px;
+  }
+
+  .recommendation-item {
+    padding: 10px;
+    font-size: 0.85em;
+  }
+
+  .recommendations h3 {
+    font-size: 1em;
+  }
+
+  .footer-title {
+    font-size: 1em;
+  }
+
+  .developer-name {
+    font-size: 1.2em;
+  }
+}
+
+/* Ajustes para orientação landscape em mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .header {
+    padding: 30px 20px;
+  }
+
+  .header h1 {
+    font-size: 2em;
+  }
+
+  .main-content {
+    padding: 25px 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+}
+
+/* Ajustes para telas muito largas */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .main-content {
+    padding: 80px 60px;
+    gap: 50px;
+  }
+
+  .input-section,
+  .results-section {
+    padding: 40px;
+  }
+
+  .header {
+    padding: 80px 40px;
+  }
+
+  .header h1 {
+    font-size: 3.5em;
+  }
+
+  .header p {
+    font-size: 1.4em;
   }
 }
