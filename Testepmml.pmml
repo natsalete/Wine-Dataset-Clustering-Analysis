@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.2" xmlns="http://www.dmg.org/PMML-4_2">
+  <Header copyright="natsa">
+    <Application name="KNIME" version="5.4.3"/>
+  </Header>
+  <DataDictionary numberOfFields="11">
+    <DataField name="fixed acidity" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="volatile acidity" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="citric acid" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="residual sugar" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="chlorides" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="free sulfur dioxide" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="total sulfur dioxide" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="density" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="pH" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="sulphates" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="alcohol" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+  </DataDictionary>
+  <ClusteringModel modelName="k-means" functionName="clustering" modelClass="centerBased" numberOfClusters="3">
+    <MiningSchema>
+      <MiningField name="fixed acidity" invalidValueTreatment="asIs"/>
+      <MiningField name="volatile acidity" invalidValueTreatment="asIs"/>
+      <MiningField name="citric acid" invalidValueTreatment="asIs"/>
+      <MiningField name="residual sugar" invalidValueTreatment="asIs"/>
+      <MiningField name="chlorides" invalidValueTreatment="asIs"/>
+      <MiningField name="free sulfur dioxide" invalidValueTreatment="asIs"/>
+      <MiningField name="total sulfur dioxide" invalidValueTreatment="asIs"/>
+      <MiningField name="density" invalidValueTreatment="asIs"/>
+      <MiningField name="pH" invalidValueTreatment="asIs"/>
+      <MiningField name="sulphates" invalidValueTreatment="asIs"/>
+      <MiningField name="alcohol" invalidValueTreatment="asIs"/>
+    </MiningSchema>
+    <ComparisonMeasure kind="distance">
+      <squaredEuclidean/>
+    </ComparisonMeasure>
+    <ClusteringField field="fixed acidity" compareFunction="absDiff"/>
+    <ClusteringField field="volatile acidity" compareFunction="absDiff"/>
+    <ClusteringField field="citric acid" compareFunction="absDiff"/>
+    <ClusteringField field="residual sugar" compareFunction="absDiff"/>
+    <ClusteringField field="chlorides" compareFunction="absDiff"/>
+    <ClusteringField field="free sulfur dioxide" compareFunction="absDiff"/>
+    <ClusteringField field="total sulfur dioxide" compareFunction="absDiff"/>
+    <ClusteringField field="density" compareFunction="absDiff"/>
+    <ClusteringField field="pH" compareFunction="absDiff"/>
+    <ClusteringField field="sulphates" compareFunction="absDiff"/>
+    <ClusteringField field="alcohol" compareFunction="absDiff"/>
+    <Cluster name="cluster_0" size="309">
+      <Array n="11" type="real">0.5127015493885494 0.21107638427095807 0.5021682847896435 0.14024471339273806 0.15775483410862767 0.17905617543351207 0.11674499982846785 0.6061094240812851 0.34551384960375087 0.25066372110148627 0.3137996846734713 </Array>
+    </Cluster>
+    <Cluster name="cluster_1" size="245">
+      <Array n="11" type="real">0.23099151164890744 0.23153480570310325 0.24346938775510216 0.09938495946323743 0.09562876903683008 0.24687785561985995 0.12726617148626268 0.3235038508795587 0.5215169532379882 0.20611022852254673 0.5310622710622713 </Array>
+    </Cluster>
+    <Cluster name="cluster_2" size="589">
+      <Array n="11" type="real">0.2722628724251393 0.3396923041142405 0.15606112054329366 0.10202455985301224 0.12022017454104318 0.22669335833565632 0.15951753886025874 0.4964348842833272 0.47432589602021297 0.1635676016388277 0.22414783857907855 </Array>
+    </Cluster>
+  </ClusteringModel>
+</PMML>

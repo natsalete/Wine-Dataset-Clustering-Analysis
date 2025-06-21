@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wine Dataset Clustering Analysis</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Wine Dataset Clustering Analysis</h1>
+        <p class="subtitle">
+          Análise Completa de Agrupamento e Sistema de Recomendação
+        </p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="main-content">
+        <section class="section">
+          <h2>🍷 Dataset Wine Quality</h2>
+          <p>
+            Base de dados utilizada para análise de clustering e desenvolvimento
+            do sistema de recomendação:
+          </p>
+          <div style="text-align: center; margin: 30px 0">
+            <a
+              href="https://www.kaggle.com/datasets/yasserh/wine-quality-dataset"
+              class="dataset-link"
+              target="_blank"
+            >
+              🔗 Acessar Dataset no Kaggle
+            </a>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>🔧 Análise no KNIME</h2>
+          <div class="knime-analysis">
+            <div class="analysis-image">
+              <!-- [Imagem da Análise no KNIME - Workflow Completo] -->
+               <img class="analysis-image" src="/img/Análise no KNIME - Workflow Completo.png" alt="Análise no KNIME - Workflow Completo">
+            </div>
+            <p>
+              <em
+                >Workflow completo desenvolvido no KNIME para análise de
+                clustering do dataset de vinhos</em
+              >
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="algorithm-section">
+            <h3 class="algorithm-title">K-Means Clustering</h3>
+            <div class="best-k">K = 3</div>
+            <div class="justification">
+              <p>
+                <strong>Justificativa:</strong> O valor ótimo de K=3 foi
+                determinado através de análise detalhada utilizando
+                visualizações de dados e métricas de qualidade de agrupamento.
+              </p>
+            </div>
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <div class="metric-title">Scatter Plot</div>
+                <div class="analysis-image" style="height: 350px">
+                  <!-- [Gráfico Scatter Plot K-Means] -->
+                   <img class="analysis-image" style="height: 350px" src="/img/Gráfico Scatter Plot K-Means.png" alt="Gráfico Scatter Plot K-Means">
+                </div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-title">Scatter Matrix</div>
+                <div class="analysis-image" style="height: 350px">
+                  <!-- [Scatter Matrix K-Means] -->
+                   <img class="analysis-image" style="height: 350px" src="/img/Scatter Matrix K-Means.png" alt="Scatter Matrix K-Means">
+                </div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-title">Coeficiente de Silhueta</div>
+                <div class="analysis-image" style="height: 350px">
+                  <!-- [Coeficiente Silhueta K-Means] -->
+                   <img src="/img/Coeficiente Silhueta K-Means.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="algorithm-section">
+            <h3 class="algorithm-title">K-Medoids Clustering</h3>
+            <div class="justification">
+              <p>
+                <strong>Análise:</strong> Avaliação do algoritmo K-Medoids com
+                diferentes valores de K, utilizando visualizações e coeficiente
+                de silhueta para determinar a configuração ótima.
+              </p>
+            </div>
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <div class="metric-title">Scatter Plot</div>
+                <div class="analysis-image" style="height: 350px">
+                  [Gráfico Scatter Plot K-Medoids]
+                </div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-title">Scatter Matrix</div>
+                <div class="analysis-image" style="height: 350px">
+                  [Scatter Matrix K-Medoids]
+                </div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-title">Coeficiente de Silhueta</div>
+                <div class="analysis-image" style="height: 350px">
+                  [Coeficiente Silhueta K-Medoids]
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="algorithm-section">
+            <h3 class="algorithm-title">Agrupamento Hierárquico</h3>
+            <div class="justification">
+              <p>
+                <strong>Análise:</strong> Implementação de clustering
+                hierárquico com avaliação através de visualizações e coeficiente
+                de silhueta.
+              </p>
+            </div>
+            <div class="highlight">
+              <p>
+                <strong>Observação:</strong> Apesar de apresentar bons
+                resultados, este algoritmo apresenta limitações na geração de
+                arquivos PMML e demanda alto tempo de processamento.
+              </p>
+            </div>
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <div class="metric-title">Scatter Plot</div>
+                <div class="analysis-image" style="height: 350px">
+                  [Gráfico Scatter Plot Hierárquico]
+                </div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-title">Scatter Matrix</div>
+                <div class="analysis-image" style="height: 350px">
+                  [Scatter Matrix Hierárquico]
+                </div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-title">Coeficiente de Silhueta</div>
+                <div class="analysis-image" style="height: 350px">
+                  [Coeficiente Silhueta Hierárquico]
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="algorithm-section">
+            <h3 class="algorithm-title">Fuzzy C-Means</h3>
+            <div class="justification">
+              <p>
+                <strong>Análise:</strong> Implementação do algoritmo Fuzzy
+                C-Means como método final de agrupamento, avaliado através de
+                visualizações e coeficiente de silhueta.
+              </p>
+            </div>
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <div class="metric-title">Scatter Plot</div>
+                <div class="analysis-image" style="height: 350px">
+                  [Gráfico Scatter Plot Fuzzy C-Means]
+                </div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-title">Scatter Matrix</div>
+                <div class="analysis-image" style="height: 350px">
+                  [Scatter Matrix Fuzzy C-Means]
+                </div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-title">Coeficiente de Silhueta</div>
+                <div class="analysis-image" style="height: 350px">
+                  [Coeficiente Silhueta Fuzzy C-Means]
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="recommendation-section">
+            <h2>🎯 Sistema de Recomendação</h2>
+            <p style="font-size: 1.2em; margin-bottom: 20px">
+              Após análise comparativa de todos os algoritmos, foi escolhido o
+              <strong>K-Means</strong> para desenvolvimento do Sistema de
+              Recomendação de Vinhos devido à sua eficiência, precisão e
+              facilidade de implementação.
+            </p>
+            <a
+              href="analise.html"
+              target="_blank"
+              class="cta-button"
+              onclick="alert('Navegando para o Sistema de Recomendação de Vinhos...')"
+            >
+              🍷 Acessar Sistema de Recomendação
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Recomendação de Vinhos</title>
+    <link rel="stylesheet" href="/css/analise.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍷 Sistema de Recomendação de Vinhos</h1>
+            <p>Análise de Clustering e Recomendação por Similaridade</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <h2>📊 Parâmetros do Vinho</h2>
+                <form id="wineForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fixed_acidity">Acidez Fixa (4-16)</label>
+                            <input type="number" id="fixed_acidity" step="0.1" min="4" max="16" value="7.4" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="volatile_acidity">Acidez Volátil (0-2)</label>
+                            <input type="number" id="volatile_acidity" step="0.01" min="0" max="2" value="0.7" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="citric_acid">Ácido Cítrico (0-1)</label>
+                            <input type="number" id="citric_acid" step="0.01" min="0" max="1" value="0.0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="residual_sugar">Açúcar Residual (0-16)</label>
+                            <input type="number" id="residual_sugar" step="0.1" min="0" max="16" value="1.9" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="chlorides">Cloretos (0-1)</label>
+                            <input type="number" id="chlorides" step="0.001" min="0" max="1" value="0.076" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="free_sulfur_dioxide">SO₂ Livre (1-68)</label>
+                            <input type="number" id="free_sulfur_dioxide" step="1" min="1" max="68" value="11" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="total_sulfur_dioxide">SO₂ Total (6-290)</label>
+                            <input type="number" id="total_sulfur_dioxide" step="1" min="6" max="290" value="34" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="density">Densidade (0-1)</label>
+                            <input type="number" id="density" step="0.0001" min="0" max="1" value="0.9978" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pH">pH (2-5)</label>
+                            <input type="number" id="pH" step="0.01" min="2" max="5" value="3.51" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sulphates">Sulfatos (1-2)</label>
+                            <input type="number" id="sulphates" step="0.01" min="0" max="2" value="0.56" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="alcohol">Álcool (8-15)</label>
+                            <input type="number" id="alcohol" step="0.1" min="8" max="15" value="9.4" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-predict">🔍 Analisar Vinho</button>
+                </form>
+            </div>
+
+            <div class="results-section">
+                <h2>🎯 Resultados da Análise</h2>
+                <div id="results">
+                    <p style="color: #6c757d; text-align: center; padding: 40px;">
+                        Insira os parâmetros do vinho e clique em "Analisar Vinho" para ver os resultados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/analise.js"></script>
+</body>
+</html>
