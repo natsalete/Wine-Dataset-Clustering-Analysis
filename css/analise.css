@@ -8,13 +8,13 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
-  padding: 20px;
+  padding-top: 20px;
   line-height: 1.6;
   color: #333;
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   background: white;
   border-radius: 20px;
@@ -76,14 +76,15 @@ body {
 .main-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  padding: 80px 60px;
+  gap: 40px;
+  padding: 60px 40px;
 }
 
-.input-section, .results-section {
+.input-section,
+.results-section {
   background: #f8f9fa;
-  padding: 45px;
-  border-radius: 20px;
+  padding: 35px;
+  border-radius: 15px;
   border: 2px solid #e9ecef;
   position: relative;
   transition: all 0.3s ease;
@@ -92,16 +93,18 @@ body {
   animation: fadeInUp 0.8s ease-out 0.5s forwards;
 }
 
-.input-section:hover, .results-section:hover {
+.input-section:hover,
+.results-section:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   border-color: #667eea;
 }
 
-.input-section h2, .results-section h2 {
+.input-section h2,
+.results-section h2 {
   color: #2c3e50;
-  margin-bottom: 30px;
-  font-size: 2.2em;
+  margin-bottom: 25px;
+  font-size: 1.8em;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -109,7 +112,8 @@ body {
   padding-bottom: 15px;
 }
 
-.input-section h2::after, .results-section h2::after {
+.input-section h2::after,
+.results-section h2::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -123,7 +127,7 @@ body {
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 25px;
+  gap: 20px;
 }
 
 .form-group {
@@ -139,10 +143,10 @@ body {
 }
 
 .form-group input {
-  padding: 15px 18px;
+  padding: 12px 15px;
   border: 2px solid #dee2e6;
   border-radius: 10px;
-  font-size: 1.05em;
+  font-size: 1em;
   transition: all 0.3s ease;
   background: white;
 }
@@ -156,16 +160,16 @@ body {
 
 .btn-predict {
   grid-column: 1 / -1;
-  padding: 20px 30px;
+  padding: 18px 25px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
   border-radius: 50px;
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 30px;
+  margin-top: 25px;
   box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
   position: relative;
   overflow: hidden;
@@ -198,10 +202,10 @@ body {
 
 .cluster-result {
   background: white;
-  padding: 30px;
-  border-radius: 20px;
+  padding: 25px;
+  border-radius: 15px;
   border-left: 6px solid #667eea;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   position: relative;
@@ -215,7 +219,11 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.03) 0%, rgba(118, 75, 162, 0.03) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.03) 0%,
+    rgba(118, 75, 162, 0.03) 100%
+  );
   z-index: 0;
 }
 
@@ -336,7 +344,8 @@ body {
 }
 
 @keyframes gradientMove {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {
@@ -356,24 +365,54 @@ body {
   }
 }
 
+footer {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  text-align: center;
+  padding: 40px 0;
+  margin-top: 60px;
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-title {
+  font-size: 1.3em;
+  font-weight: 300;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.developer-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #3498db;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   .header h1 {
     font-size: 2.2em;
   }
-  
+
   .main-content {
     grid-template-columns: 1fr;
-    padding: 40px 30px;
-    gap: 40px;
+    padding: 30px 20px;
+    gap: 30px;
   }
-  
+
   .form-grid {
     grid-template-columns: 1fr;
   }
-  
-  .input-section, .results-section {
-    padding: 30px 25px;
+
+  .input-section,
+  .results-section {
+    padding: 25px 20px;
   }
 }
 
@@ -381,24 +420,20 @@ body {
   body {
     padding: 10px;
   }
-  
+
   .header {
     padding: 40px 20px;
   }
-  
+
   .header h1 {
     font-size: 1.8em;
   }
-  
+
   .header p {
     font-size: 1.1em;
   }
-  
+
   .main-content {
-    padding: 30px 20px;
-  }
-  
-  .input-section, .results-section {
-    padding: 25px 20px;
+    padding: 20px 15px;
   }
 }
